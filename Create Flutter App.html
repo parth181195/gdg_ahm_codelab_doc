@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>
+        Flutter Codelab
+    </title>
+    <link rel="icon" type="image/png" href="https://hackmd.io/favicon.png">
+    <link rel="apple-touch-icon" href="https://hackmd.io/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha256-916EbMg70RQy9LHiGkXzG8hSg9EdNy97GazNG/aiY1w=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css" integrity="sha256-3iu9jgsy9TpTwXKb7bNQzqWekRX7pPK+2OLj3R922fo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css" integrity="sha256-QiWfLIsCT02Sdwkogf6YMiQlj4NE84MKkzEMkZnMGdg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.1/themes/prism.min.css" integrity="sha256-vtR0hSWRc3Tb26iuN2oZHt3KRUomwTufNIf5/4oeCyg=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/css/basic/emojify.min.css" integrity="sha256-UOrvMOsSDSrW6szVLe8ZDZezBxh5IoIfgTwdNDgTjiU=" crossorigin="anonymous" />
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i|Source+Code+Pro:300,400,500|Source+Sans+Pro:300,300i,400,400i,600,600i|Source+Serif+Pro&subset=latin-ext);.hljs{display:block;background:#fff;padding:.5em;color:#333;overflow-x:auto}.hljs-comment,.hljs-meta{color:#969896}.hljs-emphasis,.hljs-quote,.hljs-string,.hljs-strong,.hljs-template-variable,.hljs-variable{color:#df5000}.hljs-keyword,.hljs-selector-tag,.hljs-type{color:#a71d5d}.hljs-attribute,.hljs-bullet,.hljs-literal,.hljs-number,.hljs-symbol{color:#0086b3}.hljs-built_in,.hljs-builtin-name{color:#005cc5}.hljs-name,.hljs-section{color:#63a35c}.hljs-tag{color:#333}.hljs-attr,.hljs-selector-attr,.hljs-selector-class,.hljs-selector-id,.hljs-selector-pseudo,.hljs-title{color:#795da3}.hljs-addition{color:#55a532;background-color:#eaffea}.hljs-deletion{color:#bd2c00;background-color:#ffecec}.hljs-link{text-decoration:underline}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.5;word-wrap:break-word}.markdown-body:after,.markdown-body:before{display:table;content:""}.markdown-body:after{clear:both}.markdown-body>:first-child{margin-top:0!important}.markdown-body>:last-child{margin-bottom:0!important}.markdown-body a:not([href]){color:inherit;text-decoration:none}.markdown-body .absent{color:#c00}.markdown-body .anchor{float:left;padding-right:4px;margin-left:-20px;line-height:1}.markdown-body .anchor:focus{outline:none}.markdown-body blockquote,.markdown-body dl,.markdown-body ol,.markdown-body p,.markdown-body pre,.markdown-body table,.markdown-body ul{margin-top:0;margin-bottom:16px}.markdown-body hr{height:.25em;padding:0;margin:24px 0;background-color:#e7e7e7;border:0}.markdown-body blockquote{font-size:16px;padding:0 1em;color:#777;border-left:.25em solid #ddd}.markdown-body blockquote>:first-child{margin-top:0}.markdown-body blockquote>:last-child{margin-bottom:0}.markdown-body .loweralpha{list-style-type:lower-alpha}.markdown-body h1,.markdown-body h2,.markdown-body h3,.markdown-body h4,.markdown-body h5,.markdown-body h6{margin-top:24px;margin-bottom:16px;font-weight:600;line-height:1.25}.markdown-body h1 .octicon-link,.markdown-body h2 .octicon-link,.markdown-body h3 .octicon-link,.markdown-body h4 .octicon-link,.markdown-body h5 .octicon-link,.markdown-body h6 .octicon-link{color:#000;vertical-align:middle;visibility:hidden}.markdown-body h1:hover .anchor,.markdown-body h2:hover .anchor,.markdown-body h3:hover .anchor,.markdown-body h4:hover .anchor,.markdown-body h5:hover .anchor,.markdown-body h6:hover .anchor{text-decoration:none}.markdown-body h1:hover .anchor .octicon-link,.markdown-body h2:hover .anchor .octicon-link,.markdown-body h3:hover .anchor .octicon-link,.markdown-body h4:hover .anchor .octicon-link,.markdown-body h5:hover .anchor .octicon-link,.markdown-body h6:hover .anchor .octicon-link{visibility:visible}.markdown-body h1 code,.markdown-body h1 tt,.markdown-body h2 code,.markdown-body h2 tt,.markdown-body h3 code,.markdown-body h3 tt,.markdown-body h4 code,.markdown-body h4 tt,.markdown-body h5 code,.markdown-body h5 tt,.markdown-body h6 code,.markdown-body h6 tt{font-size:inherit}.markdown-body h1{font-size:2em}.markdown-body h1,.markdown-body h2{padding-bottom:.3em;border-bottom:1px solid #eee}.markdown-body h2{font-size:1.5em}.markdown-body h3{font-size:1.25em}.markdown-body h4{font-size:1em}.markdown-body h5{font-size:.875em}.markdown-body h6{font-size:.85em;color:#777}.markdown-body ol,.markdown-body ul{padding-left:2em}.markdown-body ol.no-list,.markdown-body ul.no-list{padding:0;list-style-type:none}.markdown-body ol ol,.markdown-body ol ul,.markdown-body ul ol,.markdown-body ul ul{margin-top:0;margin-bottom:0}.markdown-body li>p{margin-top:16px}.markdown-body li+li{margin-top:.25em}.markdown-body dl{padding:0}.markdown-body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}.markdown-body dl dd{padding:0 16px;margin-bottom:16px}.markdown-body table{display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}.markdown-body table th{font-weight:700}.markdown-body table td,.markdown-body table th{padding:6px 13px;border:1px solid #ddd}.markdown-body table tr{background-color:#fff;border-top:1px solid #ccc}.markdown-body table tr:nth-child(2n){background-color:#f8f8f8}.markdown-body img{max-width:100%;box-sizing:content-box;background-color:#fff}.markdown-body img[align=right]{padding-left:20px}.markdown-body img[align=left]{padding-right:20px}.markdown-body .emoji{max-width:none;vertical-align:text-top;background-color:transparent}.markdown-body span.frame{display:block;overflow:hidden}.markdown-body span.frame>span{display:block;float:left;width:auto;padding:7px;margin:13px 0 0;overflow:hidden;border:1px solid #ddd}.markdown-body span.frame span img{display:block;float:left}.markdown-body span.frame span span{display:block;padding:5px 0 0;clear:both;color:#333}.markdown-body span.align-center{display:block;overflow:hidden;clear:both}.markdown-body span.align-center>span{display:block;margin:13px auto 0;overflow:hidden;text-align:center}.markdown-body span.align-center span img{margin:0 auto;text-align:center}.markdown-body span.align-right{display:block;overflow:hidden;clear:both}.markdown-body span.align-right>span{display:block;margin:13px 0 0;overflow:hidden;text-align:right}.markdown-body span.align-right span img{margin:0;text-align:right}.markdown-body span.float-left{display:block;float:left;margin-right:13px;overflow:hidden}.markdown-body span.float-left span{margin:13px 0 0}.markdown-body span.float-right{display:block;float:right;margin-left:13px;overflow:hidden}.markdown-body span.float-right>span{display:block;margin:13px auto 0;overflow:hidden;text-align:right}.markdown-body code,.markdown-body tt{padding:0;padding-top:.2em;padding-bottom:.2em;margin:0;font-size:85%;background-color:rgba(0,0,0,.04);border-radius:3px}.markdown-body code:after,.markdown-body code:before,.markdown-body tt:after,.markdown-body tt:before{letter-spacing:-.2em;content:"\00a0"}.markdown-body code br,.markdown-body tt br{display:none}.markdown-body del code{text-decoration:inherit}.markdown-body pre{word-wrap:normal}.markdown-body pre>code{padding:0;margin:0;font-size:100%;word-break:normal;white-space:pre;background:transparent;border:0}.markdown-body .highlight{margin-bottom:16px}.markdown-body .highlight pre{margin-bottom:0;word-break:normal}.markdown-body .highlight pre,.markdown-body pre{padding:16px;overflow:auto;font-size:85%;line-height:1.45;background-color:#f7f7f7;border-radius:3px}.markdown-body pre code,.markdown-body pre tt{display:inline;max-width:auto;padding:0;margin:0;overflow:visible;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}.markdown-body pre code:after,.markdown-body pre code:before,.markdown-body pre tt:after,.markdown-body pre tt:before{content:normal}.markdown-body .csv-data td,.markdown-body .csv-data th{padding:5px;overflow:hidden;font-size:12px;line-height:1;text-align:left;white-space:nowrap}.markdown-body .csv-data .blob-line-num{padding:10px 8px 9px;text-align:right;background:#fff;border:0}.markdown-body .csv-data tr{border-top:0}.markdown-body .csv-data th{font-weight:700;background:#f8f8f8;border-top:0}.markdown-body kbd{display:inline-block;padding:3px 5px;font-size:11px;line-height:10px;color:#555;vertical-align:middle;background-color:#fcfcfc;border:1px solid #ccc;border-bottom-color:#bbb;border-radius:3px;box-shadow:inset 0 -1px 0 #bbb}.news .alert .markdown-body blockquote{padding:0 0 0 40px;border:0 none}.activity-tab .news .alert .commits,.activity-tab .news .markdown-body blockquote{padding-left:0}.task-list-item{list-style-type:none}.task-list-item label{font-weight:400}.task-list-item.enabled label{cursor:pointer}.task-list-item+.task-list-item{margin-top:3px}.task-list-item-checkbox{float:left;margin:.31em 0 .2em -1.3em!important;vertical-align:middle;cursor:default!important}.markdown-body{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;padding-top:40px;padding-bottom:40px;max-width:758px;overflow:visible!important}.markdown-body .emoji{vertical-align:top}.markdown-body pre{border:inherit!important}.markdown-body code{color:inherit!important}.markdown-body pre code .wrapper{display:-moz-inline-flex;display:-ms-inline-flex;display:-o-inline-flex;display:inline-flex}.markdown-body pre code .gutter{float:left;overflow:hidden;-webkit-user-select:none;user-select:none}.markdown-body pre code .gutter.linenumber{text-align:right;position:relative;display:inline-block;cursor:default;z-index:4;padding:0 8px 0 0;min-width:20px;box-sizing:content-box;color:#afafaf!important;border-right:3px solid #6ce26c!important}.markdown-body pre code .gutter.linenumber>span:before{content:attr(data-linenumber)}.markdown-body pre code .code{float:left;margin:0 0 0 16px}.markdown-body .gist .line-numbers{border-left:none;border-top:none;border-bottom:none}.markdown-body .gist .line-data{border:none}.markdown-body .gist table{border-spacing:0;border-collapse:inherit!important}.markdown-body code[data-gist-id]{background:none;padding:0}.markdown-body code[data-gist-id]:after,.markdown-body code[data-gist-id]:before{content:""}.markdown-body code[data-gist-id] .blob-num{border:unset}.markdown-body code[data-gist-id] table{overflow:unset;margin-bottom:unset}.markdown-body code[data-gist-id] table tr{background:unset}.markdown-body[dir=rtl] pre{direction:ltr}.markdown-body[dir=rtl] code{direction:ltr;unicode-bidi:embed}.markdown-body .alert>p{margin-bottom:0}.markdown-body pre.abc,.markdown-body pre.flow-chart,.markdown-body pre.graphviz,.markdown-body pre.mermaid,.markdown-body pre.sequence-diagram{text-align:center;background-color:inherit;border-radius:0;white-space:inherit}.markdown-body pre.abc>code,.markdown-body pre.flow-chart>code,.markdown-body pre.graphviz>code,.markdown-body pre.mermaid>code,.markdown-body pre.sequence-diagram>code{text-align:left}.markdown-body pre.abc>svg,.markdown-body pre.flow-chart>svg,.markdown-body pre.graphviz>svg,.markdown-body pre.mermaid>svg,.markdown-body pre.sequence-diagram>svg{max-width:100%;height:100%}.markdown-body pre>code.wrap{white-space:pre-wrap;white-space:-moz-pre-wrap;white-space:-pre-wrap;white-space:-o-pre-wrap;word-wrap:break-word}.markdown-body .alert>p,.markdown-body .alert>ul{margin-bottom:0}.markdown-body summary{display:list-item}.markdown-body summary:focus{outline:none}.markdown-body details summary{cursor:pointer}.markdown-body details:not([open])>:not(summary){display:none}.markdown-body figure{margin:1em 40px}.markdown-body .mark,.markdown-body mark{background-color:#fff1a7}.vimeo,.youtube{cursor:pointer;display:table;text-align:center;background-position:50%;background-repeat:no-repeat;background-size:contain;background-color:#000;overflow:hidden}.vimeo,.youtube{position:relative;width:100%}.youtube{padding-bottom:56.25%}.vimeo img{width:100%;object-fit:contain;z-index:0}.youtube img{object-fit:cover;z-index:0}.vimeo iframe,.youtube iframe,.youtube img{width:100%;height:100%;position:absolute;top:0;left:0}.vimeo iframe,.youtube iframe{vertical-align:middle;z-index:1}.vimeo .icon,.youtube .icon{position:absolute;height:auto;width:auto;top:50%;left:50%;transform:translate(-50%,-50%);color:#fff;opacity:.3;transition:opacity .2s;z-index:0}.vimeo:hover .icon,.youtube:hover .icon{opacity:.6;transition:opacity .2s}.slideshare .inner,.speakerdeck .inner{position:relative;width:100%}.slideshare .inner iframe,.speakerdeck .inner iframe{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%}.MJX_Assistive_MathML{display:none}.ui-infobar{position:relative;z-index:2;max-width:760px;margin:25px auto -25px;padding:0 15px;color:#777}.toc .invisable-node{list-style-type:none}.ui-toc{position:fixed;bottom:20px;z-index:998}.ui-toc-label{opacity:.3;background-color:#ccc;border:none;transition:opacity .2s}.ui-toc .open .ui-toc-label{opacity:1;color:#fff;transition:opacity .2s}.ui-toc-label:focus{opacity:.3;background-color:#ccc;color:#000}.ui-toc-label:hover{opacity:1;background-color:#ccc;transition:opacity .2s}.ui-toc-dropdown{margin-top:23px;margin-bottom:20px;padding-left:10px;padding-right:10px;max-width:45vw;width:25vw;max-height:70vh;overflow:auto;text-align:inherit}.ui-toc-dropdown>.toc{max-height:calc(70vh - 100px);overflow:auto}.ui-toc-dropdown[dir=rtl] .nav{padding-right:0;letter-spacing:.0029em}.ui-toc-dropdown a{overflow:hidden;text-overflow:ellipsis;white-space:pre}.ui-toc-dropdown .nav>li>a{display:block;padding:4px 20px;font-size:13px;font-weight:500;color:#767676}.ui-toc-dropdown .nav>li:first-child:last-child > ul,.ui-toc-dropdown .toc.expand ul{display:block}.ui-toc-dropdown .nav>li>a:focus,.ui-toc-dropdown .nav>li>a:hover{padding-left:19px;color:#000;text-decoration:none;background-color:transparent;border-left:1px solid #000}.ui-toc-dropdown[dir=rtl] .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav>li>a:hover{padding-right:19px;border-left:none;border-right:1px solid #000}.ui-toc-dropdown .nav>.active:focus>a,.ui-toc-dropdown .nav>.active:hover>a,.ui-toc-dropdown .nav>.active>a{padding-left:18px;font-weight:700;color:#000;background-color:transparent;border-left:2px solid #000}.ui-toc-dropdown[dir=rtl] .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav>.active>a{padding-right:18px;border-left:none;border-right:2px solid #000}.ui-toc-dropdown .nav .nav{display:none;padding-bottom:10px}.ui-toc-dropdown .nav>.active>ul{display:block}.ui-toc-dropdown .nav .nav>li>a{padding-top:1px;padding-bottom:1px;padding-left:30px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a{padding-right:30px}.ui-toc-dropdown .nav .nav>li>ul>li>a{padding-top:1px;padding-bottom:1px;padding-left:40px;font-size:12px;font-weight:400}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a{padding-right:40px}.ui-toc-dropdown .nav .nav>li>a:focus,.ui-toc-dropdown .nav .nav>li>a:hover{padding-left:29px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>a:hover{padding-right:29px}.ui-toc-dropdown .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown .nav .nav>li>ul>li>a:hover{padding-left:39px}.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:focus,.ui-toc-dropdown[dir=rtl] .nav .nav>li>ul>li>a:hover{padding-right:39px}.ui-toc-dropdown .nav .nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>a{padding-left:28px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>a{padding-right:28px}.ui-toc-dropdown .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown .nav .nav>.active>.nav>.active>a{padding-left:38px;font-weight:500}.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:focus>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active:hover>a,.ui-toc-dropdown[dir=rtl] .nav .nav>.active>.nav>.active>a{padding-right:38px}.markdown-body[lang^=ja]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,Hiragino Kaku Gothic Pro,ヒラギノ角ゴ Pro W3,Osaka,Meiryo,メイリオ,MS Gothic,ＭＳ\ ゴシック,sans-serif}.ui-toc-dropdown[lang^=ja]{font-family:Source Sans Pro,Helvetica,Arial,Meiryo UI,MS PGothic,ＭＳ\ Ｐゴシック,sans-serif}.markdown-body[lang=zh-tw]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang TC,Microsoft JhengHei,微軟正黑,sans-serif}.ui-toc-dropdown[lang=zh-tw]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft JhengHei UI,微軟正黑UI,sans-serif}.markdown-body[lang=zh-cn]{font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,PingFang SC,Microsoft YaHei,微软雅黑,sans-serif}.ui-toc-dropdown[lang=zh-cn]{font-family:Source Sans Pro,Helvetica,Arial,Microsoft YaHei UI,微软雅黑UI,sans-serif}.ui-affix-toc{position:fixed;top:0;max-width:15vw;max-height:70vh;overflow:auto}.back-to-top,.expand-toggle,.go-to-bottom{display:block;padding:4px 10px;margin-top:10px;margin-left:10px;font-size:12px;font-weight:500;color:#999}.back-to-top:focus,.back-to-top:hover,.expand-toggle:focus,.expand-toggle:hover,.go-to-bottom:focus,.go-to-bottom:hover{color:#563d7c;text-decoration:none}.back-to-top,.go-to-bottom{margin-top:0}.ui-user-icon{width:20px;height:20px;display:block;border-radius:3px;margin-top:2px;margin-bottom:2px;margin-right:5px;background-position:50%;background-repeat:no-repeat;background-size:cover}.ui-user-icon.small{width:18px;height:18px;display:inline-block;vertical-align:middle;margin:0 0 .2em}.ui-infobar>small>span{line-height:22px}.ui-infobar>small .dropdown{display:inline-block}.ui-infobar>small .dropdown a:focus,.ui-infobar>small .dropdown a:hover{text-decoration:none}.unselectable{-webkit-user-select:none;-o-user-select:none;user-select:none}@media print{blockquote,div,img,pre,table{page-break-inside:avoid!important}a[href]:after{font-size:12px!important}}.markdown-body.slides{position:relative;z-index:1;color:#222}.markdown-body.slides:before{content:"";display:block;position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;background-color:currentColor;box-shadow:0 0 0 50vw}.markdown-body.slides section[data-markdown]{position:relative;margin-bottom:1.5em;background-color:#fff;text-align:center}.markdown-body.slides section[data-markdown] code{text-align:left}.markdown-body.slides section[data-markdown]:before{content:"";display:block;padding-bottom:56.23%}.markdown-body.slides section[data-markdown]>div:first-child{position:absolute;top:50%;left:1em;right:1em;transform:translateY(-50%);max-height:100%;overflow:hidden}.markdown-body.slides section[data-markdown]>ul{display:inline-block}.markdown-body.slides>section>section+section:after{content:"";position:absolute;top:-1.5em;right:1em;height:1.5em;border:3px solid #777}body{font-smoothing:subpixel-antialiased!important;-webkit-font-smoothing:subpixel-antialiased!important;-moz-osx-font-smoothing:auto!important;text-shadow:0 0 1em transparent,1px 1px 1.2px rgba(0,0,0,.004);-webkit-overflow-scrolling:touch;font-family:Source Sans Pro,Helvetica,Arial,sans-serif;letter-spacing:.025em}.focus,:focus{outline:none!important}::-moz-focus-inner{border:0!important}body.modal-open{overflow-y:auto;padding-right:0!important}
+    </style>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha256-3Jy/GbSLrg0o9y5Z5n1uw0qxZECH7C6OQpVBgNFYa0g=" crossorigin="anonymous"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha256-g6iAfvZp+nDQ2TdTR/VVKJf3bGro4ub5fvWSWVRi2NE=" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.9/es5-shim.min.js" integrity="sha256-8E4Is26QH0bD52WoQpcB+R/tcWQtpzlCojrybUd7Mxo=" crossorigin="anonymous"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="doc" class="markdown-body container-fluid comment-enabled"><h1 id="Flutter-Codelab-Photos-app"><a class="anchor hidden-xs" href="#Flutter-Codelab-Photos-app" title="Flutter-Codelab-Photos-app"><span class="octicon octicon-link"></span></a><strong>Flutter Codelab: Photos app</strong></h1><h1 id="Overview"><a class="anchor hidden-xs" href="#Overview" title="Overview"><span class="octicon octicon-link"></span></a><strong>Overview</strong></h1><p>Flutter is an open source SDK for creating high-performance, high-fidelity mobile apps for IOS  and Android. The Flutter framework makes it easy for you to build user interfaces that react smoothly in your app, while reducing the amount of code required to synchronize and update your app’s view.</p><p>Flutter makes it easy to get started building beautiful apps, with its rich set of <a href="https://material.io/" target="_blank" rel="noopener">Material Design</a> and Cupertino (iOS) widgets and behaviors. Your users will love your app’s natural look and feel, because Flutter implements platform-specific scrolling, navigational patterns, fonts, and more. You’ll feel powerful and productive with Flutter’s functional-reactive framework and our extremely fast hot reloads on devices and emulators.</p><p>You’ll write your Flutter apps in <a href="https://www.dartlang.org/" target="_blank" rel="noopener">Dart</a>. Dart syntax should look familiar if you already know Java, JavaScript, C#, or Swift. Dart is compiled using the standard <a href="https://flutter.io/faq/#run-android" target="_blank" rel="noopener">Android</a> and <a href="https://flutter.io/faq/#run-ios" target="_blank" rel="noopener">iOS</a> toolchains for the specific mobile platform where your app needs to run. You get all the benefits of the Dart language, including familiar and concise <a href="https://www.dartlang.org/guides/language/language-tour" target="_blank" rel="noopener">syntax</a>, <a href="https://www.dartlang.org/guides/language/language-tour#functions" target="_blank" rel="noopener">first-class</a><a href="https://www.dartlang.org/guides/language/language-tour#functions" target="_blank" rel="noopener"> functions</a>, <a href="https://www.dartlang.org/articles/language/await-async" target="_blank" rel="noopener">async/await</a>, <a href="https://www.dartlang.org/guides/libraries/library-tour" target="_blank" rel="noopener">rich standard libraries</a>, and more.</p><p>This codelab provides a deeper dive into Flutter.</p><p>you can find the working example <a href="https://github.com/ibhavikmakwana/gdg_ahmedabad_codelab" target="_blank" rel="noopener">here</a></p><hr><h1 id="What-you’ll-learn"><a class="anchor hidden-xs" href="#What-you’ll-learn" title="What-you’ll-learn"><span class="octicon octicon-link"></span></a><strong>What you’ll learn?</strong></h1><h2 id="you-will-be-able-to"><a class="anchor hidden-xs" href="#you-will-be-able-to" title="you-will-be-able-to"><span class="octicon octicon-link"></span></a>you will be able to</h2><ul>
+<li>
+<p>Write Flutter app that runs on both Android/iOS</p>
+</li>
+<li>
+<p>Building Layouts</p>
+</li>
+<li>
+<p>Making http calls</p>
+</li>
+<li>
+<p>Navigation &amp; Routing</p>
+</li>
+<li>
+<p>Hero Animations</p>
+</li>
+</ul><h2 id="Get-API-key-for-unsplash"><a class="anchor hidden-xs" href="#Get-API-key-for-unsplash" title="Get-API-key-for-unsplash"><span class="octicon octicon-link"></span></a>Get API key for unsplash</h2><p>we are going to use unsplash api to get photos from the web to display in our photos app you can get your api key at <strong><a href="https://unsplash.com/developers" target="_blank" rel="noopener">Unsplash Developers</a></strong></p><hr><h1 id="Create-Flutter-App"><a class="anchor hidden-xs" href="#Create-Flutter-App" title="Create-Flutter-App"><span class="octicon octicon-link"></span></a>Create Flutter App</h1><h4 id="Android-Studio--IntelliJ"><a class="anchor hidden-xs" href="#Android-Studio--IntelliJ" title="Android-Studio--IntelliJ"><span class="octicon octicon-link"></span></a><strong><a href="https://flutter.io/docs/get-started/test-drive#androidstudio" target="_blank" rel="noopener">Android Studio / IntelliJ</a></strong></h4><ol>
+<li>
+<p>Select File &gt; New Flutter Project.</p>
+</li>
+<li>
+<p>Select Flutter application as the project type, and press Next.</p>
+</li>
+<li>
+<p>Make sure that the Flutter SDK Path text field specifies the location of the SDK. Install the SDK if you haven’t yet done so.</p>
+</li>
+<li>
+<p>Enter a project name (ie. <strong>photos</strong>), and press Next.</p>
+</li>
+<li>
+<p>Click Finish.</p>
+</li>
+<li>
+<p>Wait for Android Studio to install the SDK, and create the project.</p>
+</li>
+</ol><h4 id="Visual-Studio-Code"><a class="anchor hidden-xs" href="#Visual-Studio-Code" title="Visual-Studio-Code"><span class="octicon octicon-link"></span></a><strong><a href="https://flutter.io/docs/get-started/test-drive#vscode" target="_blank" rel="noopener">Visual Studio Code</a></strong></h4><ol>
+<li>
+<p>Invoke View &gt; Command Palette.</p>
+</li>
+<li>
+<p>Type “flutter”, and select the Flutter: New Project.</p>
+</li>
+<li>
+<p>Enter a project name, ie. <strong>photos</strong>, and press Enter.</p>
+</li>
+<li>
+<p>Create or select the parent directory for the new project folder.</p>
+</li>
+<li>
+<p>Wait for project creation to complete and the <strong>main.dart</strong> file to appear.</p>
+</li>
+</ol><h4 id="Terminal-amp-editor"><a class="anchor hidden-xs" href="#Terminal-amp-editor" title="Terminal-amp-editor"><span class="octicon octicon-link"></span></a><strong><a href="https://flutter.io/docs/get-started/test-drive?tab=terminal#terminal" target="_blank" rel="noopener">Terminal &amp; editor</a></strong></h4><p>Use the <strong>flutter create</strong> command to create a new project:</p><pre><code class="dart hljs">$ flutter create photos
+$ cd photos
+</code></pre><hr><h1 id="Building-the-UI"><a class="anchor hidden-xs" href="#Building-the-UI" title="Building-the-UI"><span class="octicon octicon-link"></span></a>Building the UI</h1><p>Our goal here is to use Flutter to build <strong>Photos</strong> app, a simple, extensible photos app with these features:</p><ol>
+<li>The app displays list of images from the network(<a href="http://api.unsplash.com" target="_blank" rel="noopener">Unsplash API</a>).</li>
+<li>User can click on the Image and navigate to the Detail screen with <strong>Hero</strong> Animation.</li>
+<li>The UI runs on both iOS and Android devices.</li>
+</ol><table>
+<thead>
+<tr>
+<th><img src="https://i.imgur.com/nR7sez4.jpg" alt=""></th>
+<th><img src="https://i.imgur.com/JHngYYl.jpg" alt=""></th>
+</tr>
+</thead>
+<tbody></tbody>
+</table><h2 id="Create-the-main-app-scaffold"><a class="anchor hidden-xs" href="#Create-the-main-app-scaffold" title="Create-the-main-app-scaffold"><span class="octicon octicon-link"></span></a>Create the main app scaffold</h2><p>The first element we will add is a app bar that shows title for our app. As we progress through subsequent sections of this codelab, we will add more responsive and stateful elements to the app.</p><p>first you need to navigate to the <code>main.dart</code> file which is located under the lib directory in your Flutter project</p><p><code>main.dart</code> contains the <code>main()</code> function that starts the execution of your app.</p><p>Now we need to remove everything except the imports and main function.</p><pre><code class="dart hljs"><span class="hljs-keyword">void</span> main() =&gt; runApp(MyApp());
+</code></pre><p>The <code>main()</code> and <code>runApp()</code> function definitions are the same as in the default app. The <code>runApp()</code> function takes as its argument a Widget which the Flutter framework expands and displays to the screen of the app at run time.</p><p>Now let’s crate our first widget named <code>MyApp</code> which is a stateless widget.we will override the build Method and pass context.</p><p>Since we are going to use Material Design in the app, create a new <code>MaterialApp</code> Widget and return it to the build <a href="http://method.it" target="_blank" rel="noopener">method.it</a> will have Title <code>Photos</code> and we will also set the <code>debugShowCheckedModeBanner</code> to false to make that annoying banner go away.</p><pre><code class="dart hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> MaterialApp(
+      title: <span class="hljs-string">'Photos'</span>,
+      debugShowCheckedModeBanner: <span class="hljs-keyword">false</span>,
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange ,
+      ),
+      home: HomePage(),
+    );
+  }
+}
+</code></pre><p>To specify the default screen that users see in your app, set the home argument in your MaterialApp definition. The home argument references a widget that defines the main UI for this app.</p><h2 id="Build-the-Home-screen"><a class="anchor hidden-xs" href="#Build-the-Home-screen" title="Build-the-Home-screen"><span class="octicon octicon-link"></span></a>Build the Home screen</h2><p>To lay the groundwork for interactive components, you’ll break the simple app into two different subclasses of widget: a root-level <code>MyApp</code> widget that never changes, and a child <code>HomePage</code> widget that can rebuild when we call an API and internal state changes.</p><p>For now let’s create a widget that consists of a Scaffold widget and has a simple AppBar as its child widget.</p><pre><code class="dart hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomePage</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatefulWidget</span> </span>{
+  <span class="hljs-meta">@override</span>
+  HomePageState createState() {
+    <span class="hljs-keyword">return</span> HomePageState();
+  }
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">HomePageState</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">State</span>&lt;<span class="hljs-title">HomePage</span>&gt; </span>{
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> Scaffold(
+      appBar: AppBar(
+        leading: Icon(
+          Icons.photo_size_select_actual,
+          color: Colors.white,
+        ),
+        title: Text(
+          <span class="hljs-string">'Photos'</span>,
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: <span class="hljs-keyword">true</span>,
+      ),
+      body: Container(),
+    );
+  }
+}
+</code></pre><p>If you run the app <img src="https://i.imgur.com/0fyIba0.png" alt=""> you should see a single screen that looks like this.</p><p><img src="https://i.imgur.com/WhkHygX.png" alt="" width="240" height="480"></p><ul>
+<li>
+<p>You describe the part of the user interface represented by a widget in its build method. The framework calls the <code>build()</code> methods for <code>MyApp</code> when inserting these widgets into the widget hierarchy and when their dependencies change.</p>
+</li>
+<li>
+<p><code>@override</code> is a Dart annotation that indicates that the tagged method overrides a superclass’s method.</p>
+</li>
+<li>
+<p>Some widgets, like <code>Scaffold</code> and <code>AppBar</code>, are specific to Material Design apps. Other widgets, like <code>Text</code>, are generic and can be used in any app. Widgets from different libraries in the Flutter framework are compatible and can work together in a single app.</p>
+</li>
+</ul><p>Click the hot reload <img src="https://i.imgur.com/7Nt7XBT.png" alt=""> button to see the changes almost instantly. go ahead make a small change and  try it out.</p><h2 id="Build-the-ListView"><a class="anchor hidden-xs" href="#Build-the-ListView" title="Build-the-ListView"><span class="octicon octicon-link"></span></a>Build the ListView</h2><p>Adding below code will instead of container we had in scaffold body will give you an Infinite listview.</p><pre><code class="dart hljs">ListView.builder(
+  itemBuilder: (context, index) {
+    <span class="hljs-keyword">return</span> ListTile(
+      title: Text(<span class="hljs-string">'Position: $index'</span>),
+    );
+  },
+);
+</code></pre><p><strong>What above piece of code will do?</strong></p><ul>
+<li>It will create a scrollable, linear array of widgets that are created on demand.</li>
+<li>This constructor is appropriate for list views with a large (or infinite) number of children because the builder is called only for those children that are actually visible.</li>
+<li>The itemBuilder should actually create the widget instances when called.</li>
+</ul><p><img src="https://i.imgur.com/dVPIINq.png" alt="" width="240" height="480"></p><p><code>WOLA</code>we now have a list view that is infinite now let’s populate it with some data.we are going to use <a href="http://api.unsplash.com" target="_blank" rel="noopener">Unsplash API</a> to get images and some meta data on them.</p><p>To get your own unsplash api key head over to <a href="http://api.unsplash.com" target="_blank" rel="noopener">http://api.unsplash.com</a> and get it by simply creating a account there.</p><p>Steps to get Unsplash API Key.</p><ol>
+<li>Login/Register to the Unsplash.</li>
+<li>create new app</li>
+<li>provide appropriate details to get to create app.</li>
+<li>Your App is ready and you will get you API Keys listed there.</li>
+<li>You will need the <code>Access Key</code> to call an API, <strong>Note: both your Access Key and Secret Key must remain confidential</strong></li>
+</ol><p>You can go to the <a href="https://unsplash.com/documentation" target="_blank" rel="noopener">documentation</a>to see how the API works.</p><p>So let’s start by calling the API.</p><p>We are going to use the <a href="https://unsplash.com/documentation#list-photos" target="_blank" rel="noopener">List Photos</a> API that will get a single page from the list of all photos.</p><pre><code class="request hljs"><span class="hljs-function"><span class="hljs-keyword">method</span>:</span> get
+baseUrl: https:<span class="hljs-comment">//api.unsplash.com</span>
+endPoint: /photos
+</code></pre><p>we will get the below response when we call the API.</p><pre><code>[
+  {
+    "id": "",
+    "created_at": "",
+    "updated_at": "",
+    "width": 3384,
+    "height": 4230,
+    "color": "",
+    "description": "",
+    "urls": {
+      "raw": "https://images.unsplash.com/photo-1542684710-d9ce791b2724",
+      "full": "https://images.unsplash.com/photo-1542684710-d9ce791b2724",
+      "regular": "https://images.unsplash.com/photo-1542684710-d9ce791b2724",
+      "small": "https://images.unsplash.com/photo-1542684710-d9ce791b2724",
+      "thumb": "https://images.unsplash.com/photo-1542684710-d9ce791b2724"
+    },
+    "user": {
+      "username": "blakecheekk",
+      "name": "Blake Cheek",
+      "portfolio_url": "https://www.instagram.com/blakecheekk/",
+      "bio": "Film Maker, Photographer, and Travel Enthusiast.\r\nInstagram: @blakecheekk\r\nTwitter: @blakecheekk"
+    }
+  }
+]
+</code></pre><p><em><strong>Note:</strong></em> We have shrink the response to minimal posibilities, so that we will only get the data that is needed to create our <strong>Photos</strong> app.</p><p>Now we need to create a <strong>PODO(Plain Old Dart Object)</strong> for our response.</p><blockquote>
+<p>similar to POJO we use in java.</p>
+</blockquote><p>We will directly use <a href="https://javiercbk.github.io/json_to_dart/" target="_blank" rel="noopener">Json To Dart</a> to get out <strong>PODO</strong>.</p><h2 id="Create-a-PhotoResponse-class"><a class="anchor hidden-xs" href="#Create-a-PhotoResponse-class" title="Create-a-PhotoResponse-class"><span class="octicon octicon-link"></span></a>Create a PhotoResponse class</h2><p>First, we’ll need to create a <code>PhotoResponse</code> class that contains the data from our network request. It will also include a factory constructor that allows us to create a <code>PhotoResponse</code> from json.<br>
+let’s create a new file called <code>model.dart</code> in lib folder which will have our <code>photoResponse</code> class.</p><blockquote>
+<p>For more information, please see the full article on <a href="https://flutter.io/docs/development/data-and-backend/json" target="_blank" rel="noopener">JSON and serialization.</a></p>
+</blockquote><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span></div><div class="code"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PhotoResponse</span> </span>{
+  <span class="hljs-built_in">String</span> id;
+  <span class="hljs-built_in">String</span> createdAt;
+  <span class="hljs-built_in">String</span> updatedAt;
+  <span class="hljs-built_in">int</span> width;
+  <span class="hljs-built_in">int</span> height;
+  <span class="hljs-built_in">String</span> color;
+  <span class="hljs-built_in">String</span> description;
+  PhotoUrls urls;
+  User user;
+
+  PhotoResponse({
+    <span class="hljs-keyword">this</span>.id,
+    <span class="hljs-keyword">this</span>.createdAt,
+    <span class="hljs-keyword">this</span>.updatedAt,
+    <span class="hljs-keyword">this</span>.width,
+    <span class="hljs-keyword">this</span>.height,
+    <span class="hljs-keyword">this</span>.color,
+    <span class="hljs-keyword">this</span>.description,
+    <span class="hljs-keyword">this</span>.urls,
+    <span class="hljs-keyword">this</span>.user,
+  });
+
+  <span class="hljs-keyword">static</span> PhotoResponse fromJson(<span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">String</span>, <span class="hljs-keyword">dynamic</span>&gt; json) {
+    <span class="hljs-keyword">return</span> PhotoResponse(
+      id: json[<span class="hljs-string">'id'</span>],
+      createdAt: json[<span class="hljs-string">'created_at'</span>],
+      updatedAt: json[<span class="hljs-string">'updated_at'</span>],
+      width: json[<span class="hljs-string">'width'</span>],
+      height: json[<span class="hljs-string">'height'</span>],
+      color: json[<span class="hljs-string">'color'</span>],
+      description: json[<span class="hljs-string">'description'</span>],
+      user: User.fromJson(json[<span class="hljs-string">'user'</span>]),
+      urls: PhotoUrls.fromJson(json[<span class="hljs-string">'urls'</span>]),
+    );
+  }
+}
+</div></div></code></pre><p>as you can see there are to more classes we need to crate to have a complete coverage of our response those classes are <code>user</code> and <code>photoUrls</code> class.</p><p>Here’s <code>user</code> class</p><pre><code class="dart hljs">
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+  <span class="hljs-built_in">String</span> username;
+  <span class="hljs-built_in">String</span> name;
+  <span class="hljs-built_in">String</span> bio;
+  <span class="hljs-built_in">String</span> portfolioUrl;
+
+  User({<span class="hljs-keyword">this</span>.username, <span class="hljs-keyword">this</span>.name, <span class="hljs-keyword">this</span>.bio, <span class="hljs-keyword">this</span>.portfolioUrl});
+
+  <span class="hljs-keyword">static</span> User fromJson(<span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">String</span>, <span class="hljs-keyword">dynamic</span>&gt; json) {
+    <span class="hljs-keyword">return</span> User(
+      username: json[<span class="hljs-string">'username'</span>],
+      name: json[<span class="hljs-string">'name'</span>],
+      bio: json[<span class="hljs-string">'bio'</span>],
+      portfolioUrl: json[<span class="hljs-string">'portfolio_url'</span>],
+    );
+  }
+}
+</code></pre><p><code>photoUrls</code> class</p><pre><code class="dart hljs"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PhotoUrls</span> </span>{
+  <span class="hljs-built_in">String</span> raw;
+  <span class="hljs-built_in">String</span> full;
+  <span class="hljs-built_in">String</span> regular;
+  <span class="hljs-built_in">String</span> small;
+  <span class="hljs-built_in">String</span> thumb;
+
+  PhotoUrls({<span class="hljs-keyword">this</span>.raw, <span class="hljs-keyword">this</span>.full, <span class="hljs-keyword">this</span>.regular, <span class="hljs-keyword">this</span>.small, <span class="hljs-keyword">this</span>.thumb});
+
+  <span class="hljs-keyword">static</span> PhotoUrls fromJson(<span class="hljs-built_in">Map</span>&lt;<span class="hljs-built_in">String</span>, <span class="hljs-keyword">dynamic</span>&gt; json) {
+    <span class="hljs-keyword">return</span> PhotoUrls(
+      raw: json[<span class="hljs-string">'raw'</span>],
+      full: json[<span class="hljs-string">'full'</span>],
+      regular: json[<span class="hljs-string">'regular'</span>],
+      small: json[<span class="hljs-string">'small'</span>],
+      thumb: json[<span class="hljs-string">'thumb'</span>],
+    );
+  }
+}
+
+</code></pre><h2 id="Fetch-Photos-from-the-Unsplash"><a class="anchor hidden-xs" href="#Fetch-Photos-from-the-Unsplash" title="Fetch-Photos-from-the-Unsplash"><span class="octicon octicon-link"></span></a>Fetch Photos from the Unsplash</h2><p>Fetching data from the internet is necessary for most apps.Let’s  follow these steps and get those photos off the internet.</p><h3 id="Steps"><a class="anchor hidden-xs" href="#Steps" title="Steps"><span class="octicon octicon-link"></span></a>Steps</h3><ol>
+<li>Add the http package</li>
+<li>Make a network request using the http package</li>
+<li>Convert the response into a custom Dart object</li>
+<li>Fetch and Display the data with Flutter</li>
+</ol><h3 id="1-Add-the-http-package"><a class="anchor hidden-xs" href="#1-Add-the-http-package" title="1-Add-the-http-package"><span class="octicon octicon-link"></span></a>1. Add the <code>http</code> package</h3><p>The <a href="https://pub.dartlang.org/packages/http" target="_blank" rel="noopener">http</a> package provides the simplest way to fetch data from the internet.</p><p>To install the http package, we need to add it to the dependencies section of our pubspec.yaml. We can find the <a href="https://pub.dartlang.org/packages/http#-installing-tab-" target="_blank" rel="noopener">latest version of the http package on the pub website.</a></p><pre><code>dependencies:
+  http: &lt;latest_version&gt;
+</code></pre><h3 id="2-Make-a-network-request"><a class="anchor hidden-xs" href="#2-Make-a-network-request" title="2-Make-a-network-request"><span class="octicon octicon-link"></span></a>2. Make a network request</h3><p>Before we make our first network request let’s create a separate file for our network utilities named <code>network_utils.dart</code> which will have a class named <strong><code>NetworkUtil</code></strong></p><p>now let’s create a method which will return a future of type <code>List&lt;photoResponse&gt;</code></p><pre><code class="dart hljs">Future&lt;<span class="hljs-built_in">List</span>&lt;PhotoResponse&gt;&gt; fetchPhotos() <span class="hljs-keyword">async</span> {
+  <span class="hljs-built_in">String</span> photosUrl = <span class="hljs-string">"https://api.unsplash.com/photos/"</span>;
+
+  <span class="hljs-built_in">List</span>&lt;PhotoResponse&gt; list = [];
+  <span class="hljs-keyword">final</span> response = <span class="hljs-keyword">await</span> http.<span class="hljs-keyword">get</span>(
+    photosUrl,
+    headers: {
+      <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">"Client-ID "</span> + APIConfig.accessKey,
+    },
+  );
+}
+</code></pre><p>there are some things still left to add in method but let’s understand the http call first</p><p>The <strong>http.get</strong> method returns a <strong><a href="https://docs.flutter.io/flutter/dart-async/Future-class.html" target="_blank" rel="noopener">Future</a></strong> that contains a <strong>Response</strong>.</p><ul>
+<li>Future is a core Dart class for working with async operations. It is used to represent a potential value <strong>or</strong> error that will be available at some time in the future.</li>
+<li>The Response class contains the data received from the http call.</li>
+</ul><p>The <code>headers</code> part is too authorize your request to Unsplash.<br>
+We have passed the <code>"Authorization": "Client-ID YOUR_ACCES_KEY"</code> as a Key,Value pair.</p><h3 id="3-Convert-the-response-into-a-custom-Dart-object"><a class="anchor hidden-xs" href="#3-Convert-the-response-into-a-custom-Dart-object" title="3-Convert-the-response-into-a-custom-Dart-object"><span class="octicon octicon-link"></span></a>3. Convert the response into a custom Dart object</h3><p>While it’s easy to make a network request, working with a raw <strong>Future&lt;http.Response&gt;</strong> isn’t very convenient. To make our lives easier, we can convert the <strong>http.Response</strong> into our own Dart object.</p><p>Now, we’ll update the fetchPhotos function to return a <code>Future&lt;List&lt;PhotoResponse&gt;&gt;</code>. To do so, we’ll need to:</p><ol>
+<li>Convert the response body into a json <code>Map</code> with the <code>dart:convert</code> package.</li>
+<li>If the http call was successful it will return response with a status code of 200, convert the json <code>Map</code> into a <code>PhotoResponse</code> using the <code>fromJson</code> factory.</li>
+</ol><p>Hooray! Now we’ve got a function that we can call to fetch a Photos from the Unsplash!</p><pre><code class="dart hljs">Future&lt;<span class="hljs-built_in">List</span>&lt;PhotoResponse&gt;&gt; fetchPhotos() <span class="hljs-keyword">async</span> {
+  <span class="hljs-built_in">String</span> photosUrl = <span class="hljs-string">"https://api.unsplash.com/photos/"</span>;
+
+  <span class="hljs-built_in">List</span>&lt;PhotoResponse&gt; list = [];
+  <span class="hljs-keyword">final</span> response = <span class="hljs-keyword">await</span> http.<span class="hljs-keyword">get</span>(
+    photosUrl,
+    headers: {
+      <span class="hljs-string">'Authorization'</span>: <span class="hljs-string">"Client-ID "</span> + APIConfig.accessKey,
+    },
+  );
+
+  <span class="hljs-keyword">if</span> (response.statusCode == <span class="hljs-number">200</span>) {
+    <span class="hljs-built_in">List</span> decodedJson = json.decode(response.body);
+    <span class="hljs-built_in">print</span>(json.decode(response.body));
+    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; decodedJson.length; i++) {
+      list.add(PhotoResponse.fromJson(decodedJson[i]));
+    }
+    <span class="hljs-keyword">return</span> list;
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">throw</span> Exception(<span class="hljs-string">'Failed to load photos'</span>);
+  }
+}
+</code></pre><h4 id="4-Fetch-and-Display-the-data"><a class="anchor hidden-xs" href="#4-Fetch-and-Display-the-data" title="4-Fetch-and-Display-the-data"><span class="octicon octicon-link"></span></a>4. Fetch and Display the data</h4><p>In order to fetch the data and display it on screen, we can use the <code>FutureBuilder</code> widget! The <code>FutureBuilder</code> Widget comes with Flutter and makes it easy to work with <code>async</code> data sources.</p><p>futureBuilder needs two parameters:</p><ol>
+<li>The <code>Future</code> we want to work with. In our case, we’ll call our <code>fetchPhotos()</code> method.</li>
+<li>A <code>builder</code> function that tells Flutter what to render, depending on the state of the Future: loading, success, or error.</li>
+</ol><p>now let’s wrap our infinite listView with futureBuilder</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span></div><div class="code">FutureBuilder&lt;<span class="hljs-built_in">List</span>&lt;PhotoResponse&gt;&gt;(
+  future: fetchPhotos(),
+  builder: (context, snapshot) {
+    <span class="hljs-keyword">if</span> (snapshot.hasData) {
+      <span class="hljs-keyword">return</span> ListView.builder(
+        itemBuilder: (context, index) {
+          <span class="hljs-keyword">return</span> ListTile(
+            title: Text(<span class="hljs-string">'Position: $index'</span>),
+          );
+        },
+      );
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (snapshot.hasError) {
+      <span class="hljs-keyword">return</span> Center(
+        child: Text(<span class="hljs-string">"<span class="hljs-subst">${snapshot.error}</span>"</span>),
+      );
+    }
+    <span class="hljs-keyword">return</span> Center(
+      child: CircularProgressIndicator(),
+    );
+  },
+)
+</div></div></code></pre><h4 id="Moving-the-fetchPhotos-call-out-of-the-build-method"><a class="anchor hidden-xs" href="#Moving-the-fetchPhotos-call-out-of-the-build-method" title="Moving-the-fetchPhotos-call-out-of-the-build-method"><span class="octicon octicon-link"></span></a>Moving the <code>fetchPhotos</code> call out of the build() method</h4><p>Although it’s convenient, it’s not recommended to put a call to an API in your build() method.</p><p>Flutter calls the build() method every time it wants to change anything in the view, and this happens surprisingly often. If you leave the fetch call in your build() method, you’ll flood the API with unnecessary calls and slow down your app.</p><p>Here are some better options so it’ll only hit the API when the page is initially loaded.</p><ul>
+<li>
+<p>Call it in the lifecycle of a StatefulWidget’s state</p>
+<p>If your widget is stateful, you can call the fetch method in either the <a href="https://docs.flutter.io/flutter/widgets/State/initState.html" target="_blank" rel="noopener">initState</a> or <a href="https://docs.flutter.io/flutter/widgets/State/didChangeDependencies.html" target="_blank" rel="noopener">didChangeDependencies</a> methods.</p>
+<p><code>initState</code> is called exactly once and then never again. If you want to have the option of reloading the API in response to an <a href="https://docs.flutter.io/flutter/widgets/InheritedWidget-class.html" target="_blank" rel="noopener">InheritedWidget</a> changing, put the call into the <code>didChangeDependencies</code> method. See <a href="https://docs.flutter.io/flutter/widgets/State-class.html" target="_blank" rel="noopener">State</a> for more details.</p>
+</li>
+</ul><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span></div><div class="code"><span class="hljs-meta">@override</span>
+<span class="hljs-keyword">void</span> initState() {
+  <span class="hljs-keyword">super</span>.initState();
+  photos = fetchPhotos();
+}
+</div></div></code></pre><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span></div><div class="code">FutureBuilder&lt;<span class="hljs-built_in">List</span>&lt;PhotoResponse&gt;&gt;(
+  future: photos,
+  builder: (context, snapshot) {
+    <span class="hljs-keyword">if</span> (snapshot.hasData) {
+       <span class="hljs-keyword">return</span> ListView.builder(
+        itemBuilder: (context, index) {
+          <span class="hljs-keyword">return</span> ListTile(
+            title: Text(<span class="hljs-string">'Position: $index'</span>),
+          );
+        },
+      );
+    } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (snapshot.hasError) {
+      <span class="hljs-keyword">return</span> Center(
+        child: Text(<span class="hljs-string">"<span class="hljs-subst">${snapshot.error}</span>"</span>),
+      );
+    }
+    <span class="hljs-keyword">return</span> Center(
+      child: CircularProgressIndicator(),
+    );
+  },
+)
+</div></div></code></pre><h2 id="create-buildPhotosListView"><a class="anchor hidden-xs" href="#create-buildPhotosListView" title="create-buildPhotosListView"><span class="octicon octicon-link"></span></a>create <code>buildPhotosListView</code></h2><p>We are now going to build ListView that will show our images in a Rounded Rectangle view that contain a username.</p><p>Below is the snapshot what we are going to do</p><p><img src="https://i.imgur.com/fZtg4YN.jpg" alt="" width="240" height="480"></p><p>We already learnt how to create and build a listview</p><h3 id="Create-ListView"><a class="anchor hidden-xs" href="#Create-ListView" title="Create-ListView"><span class="octicon octicon-link"></span></a>Create ListView</h3><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span></div><div class="code">  buildPhotosListView(AsyncSnapshot&lt;<span class="hljs-built_in">List</span>&lt;PhotoResponse&gt;&gt; snapshot) {
+      <span class="hljs-keyword">return</span> ListView.builder(
+        itemCount: snapshot.data.length,
+        itemBuilder: (context, index) =&gt; ImageItemWidget(snapshot.data[index]),
+      );
+  }
+</div></div></code></pre><p>We are passing a snapshot that we have got from the <code>FutureBuilder</code> and in the <code>itemBuilder</code> we have an class called <code>ImageItemWidget</code> in which we are passing the data we have got.</p><h3 id="Create-ImageItemWidget"><a class="anchor hidden-xs" href="#Create-ImageItemWidget" title="Create-ImageItemWidget"><span class="octicon octicon-link"></span></a>Create <code>ImageItemWidget</code></h3><p>Let’s create a <code>ImageItemWidget</code> that we will return in the <code>itemBuilder</code></p><p>We will create a <code>StatelesWidget</code> because <code>State</code> of this is never going to change.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span></div><div class="code"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ImageItemWidget</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  <span class="hljs-keyword">final</span> PhotoResponse data;
+
+  <span class="hljs-keyword">const</span> ImageItemWidget(<span class="hljs-keyword">this</span>.data);
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> Container();
+  }
+}
+</div></div></code></pre><p>The <code>ImageItemWidget</code> Contains a Image and Text on it at the bottom that contains the name of the user.</p><p>To do so we will use the <code>Stack</code> Widget that allow us to create widgets that overlap.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span></div><div class="code">Stack(
+  children: &lt;Widget&gt;[
+    Positioned.fill(
+      child: Image.network(
+        data.urls.full,
+        fit: BoxFit.cover,
+      ),
+    ),
+    buildBottomText(),
+  ],
+)
+</div></div></code></pre><p>Stack takes list of children that means you can draw any number of widget in the stack.</p><p>Inside the <code>Stack</code> widget we have used the <code>Positioned.fill</code> widget that allows us to expand our Image as much as screen <em>width</em> and <em>height</em> or it’s parent widgets <em>width</em> and <em>height</em>,</p><p>And at the Last inside the <code>Positioned.fill</code> widget we have used the <code>Image.newtwork</code> widget that will helps you to load an image in from the network.</p><p>Here the <code>data.urls.full</code> is our image url.<br>
+It has a property called the <code>fit</code> that allows you to inscribe the image into the space allocated during layout.</p><p>Here we have used the <code>BoxFit.cover</code> that allow image to allocate space as small as possible while still covering the entire target box.</p><h3 id="Create-a-bottom-text-widget"><a class="anchor hidden-xs" href="#Create-a-bottom-text-widget" title="Create-a-bottom-text-widget"><span class="octicon octicon-link"></span></a>Create a bottom text widget.</h3><p>We have method called <code>buildBottomText(),</code> in our <code>Stack</code> widget that used to display the <em>username</em> with that transparent rectangle.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span></div><div class="code">buildBottomText() {
+  <span class="hljs-keyword">return</span> Align(
+    alignment: Alignment.bottomLeft,
+    child: Container(
+      color: Colors.black38,
+      width: <span class="hljs-built_in">double</span>.infinity,
+      child: Padding(
+        padding: <span class="hljs-keyword">const</span> EdgeInsets.all(<span class="hljs-number">8.0</span>),
+        child: Text(
+          <span class="hljs-string">"By <span class="hljs-subst">${widget.data.user.name}</span>"</span>,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: <span class="hljs-number">16.0</span>,
+            fontWeight: FontWeight.bold,
+          ),
+          maxLines: <span class="hljs-number">2</span>,
+        ),
+      ),
+    ),
+  );
+}
+</div></div></code></pre><p>Over here in this method We have a <code>Align</code> widget that allows us to align our widget in the stack. here we have set the <code>alignment</code> to the <code>Alignment.bottomLeft</code> so our text will align from bottom left.</p><p><code>Align</code> take a child widget in which we have used the <code>Container</code>.<br>
+Using a container we can customize our widget by giving a <code>border radius</code>, <code>color</code> etc.</p><p>Here we have set the <code>color: Colors.black38</code> that will paint a black color with 38% opacity.</p><p>We have set the <code>width</code> to the <code>double.infinty</code> which means it will expand as much as the width of the screen or a parent widget.</p><p>We have used the <code>Padding</code> widget to give a padding between a <code>Container</code> and <code>Text</code>.</p><p>Now comes the <code>Text</code> widget in which the <em>username</em> will be displayed.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span></div><div class="code">Text(
+  <span class="hljs-string">"By <span class="hljs-subst">${data.user.name}</span>"</span>,
+  style: TextStyle(
+    color: Colors.white,
+    fontSize: <span class="hljs-number">16.0</span>,
+    fontWeight: FontWeight.bold,
+  ),
+  maxLines: <span class="hljs-number">2</span>,
+)
+</div></div></code></pre><p><code>style</code> property allow us to give a style to text, we can set the <code>color</code>, <code>fontSize</code>, <code>fontWeight</code> and many more using the style.</p><p>That’s it after doing this you will get an <code>ListView</code> with the images and text at the bottom.</p><h2 id="Building-the-Details-Screen"><a class="anchor hidden-xs" href="#Building-the-Details-Screen" title="Building-the-Details-Screen"><span class="octicon octicon-link"></span></a>Building the Details Screen.!</h2><p>We are going to create the <code>StatelessWidget</code> to create detail screen for our image and it will look something like below:</p><p><img src="https://i.imgur.com/uR1Qst5.jpg" alt=""></p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span></div><div class="code"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Detail</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+
+  <span class="hljs-keyword">final</span> PhotoResponse photoList;
+  Detail(<span class="hljs-keyword">this</span>.photoList);
+  
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> Container();
+  }
+}
+</div></div></code></pre><p>We are going to our PhotoResponse object from the list screen, when the user clicks on the particular image.<br>
+Using that object we are going to build our detail screen UI.</p><p>We are going to use <code>Stack</code> Widget again to achieve the our detail screen.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span></div><div class="code"><span class="hljs-meta">@override</span>
+Widget build(BuildContext context) {
+  <span class="hljs-keyword">return</span> Scaffold(
+    body: Stack(
+      children: &lt;Widget&gt;[
+        buildImage(),
+        BottomAlignedText(photoList.user),
+        buildBackIcon(context),
+      ],
+    ),
+  );
+}
+</div></div></code></pre><p>We have a one <code>buildImage()</code> method that contains the code to build our image widget.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span></div><div class="code">buildImage() {
+  <span class="hljs-keyword">return</span> Align(
+    alignment: Alignment.center,
+    child: Image.network(
+      photoList.urls.regular,
+      height: <span class="hljs-built_in">double</span>.maxFinite,
+      width: <span class="hljs-built_in">double</span>.maxFinite,
+      fit: BoxFit.cover,
+    ),
+  );
+}
+</div></div></code></pre><p>We are used the <code>Align</code> again here and set the <code>alignment</code> to <code>Alignment.center</code><br>
+In this we have used the <code>Image.network</code> Widget that takes <code>url</code>, <code>height</code>, <code>width</code>, <code>fit</code>.</p><ul>
+<li>url will be your image url.</li>
+<li>In the <code>height</code> we have set <code>double.maxFinite</code> that is max value.</li>
+<li>Same goes for the <code>width</code>.</li>
+<li>In the <code>fit</code> we have set <code>BoxFit.cover</code> that set images small as possible while still covering the entire target box.</li>
+</ul><p>We are done with our image widget, now let’s play with <code>BottomAlignedText(photoList.user),</code> widget which is our Custom <code>StatelessWidget</code>,</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span>
+<span data-linenumber="21"></span>
+<span data-linenumber="22"></span>
+<span data-linenumber="23"></span>
+<span data-linenumber="24"></span>
+<span data-linenumber="25"></span>
+<span data-linenumber="26"></span>
+<span data-linenumber="27"></span>
+<span data-linenumber="28"></span>
+<span data-linenumber="29"></span>
+<span data-linenumber="30"></span>
+<span data-linenumber="31"></span>
+<span data-linenumber="32"></span>
+<span data-linenumber="33"></span>
+<span data-linenumber="34"></span>
+<span data-linenumber="35"></span>
+<span data-linenumber="36"></span>
+<span data-linenumber="37"></span>
+<span data-linenumber="38"></span>
+<span data-linenumber="39"></span>
+<span data-linenumber="40"></span>
+<span data-linenumber="41"></span>
+<span data-linenumber="42"></span>
+<span data-linenumber="43"></span>
+<span data-linenumber="44"></span>
+<span data-linenumber="45"></span></div><div class="code"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BottomAlignedText</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">StatelessWidget</span> </span>{
+  <span class="hljs-keyword">final</span> User user;
+
+  BottomAlignedText(<span class="hljs-keyword">this</span>.user);
+
+  <span class="hljs-meta">@override</span>
+  Widget build(BuildContext context) {
+    <span class="hljs-keyword">return</span> Align(
+      alignment: Alignment.bottomLeft,
+      child: Container(
+        color: Colors.black38,
+        width: <span class="hljs-built_in">double</span>.infinity,
+        child: Wrap(
+          children: &lt;Widget&gt;[
+            Padding(
+              padding: <span class="hljs-keyword">const</span> EdgeInsets.all(<span class="hljs-number">16.0</span>),
+              child: Text(
+                <span class="hljs-string">"By <span class="hljs-subst">${user.username}</span>"</span>,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: <span class="hljs-number">16.0</span>,
+                  fontWeight: FontWeight.bold,
+                ),
+                maxLines: <span class="hljs-number">2</span>,
+              ),
+            ),
+            user.bio != <span class="hljs-keyword">null</span>
+                ? Padding(
+                    padding: <span class="hljs-keyword">const</span> EdgeInsets.all(<span class="hljs-number">16.0</span>),
+                    child: Text(
+                      <span class="hljs-string">"<span class="hljs-subst">${user.bio}</span>"</span>,
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: <span class="hljs-number">16.0</span>,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  )
+                : Text(<span class="hljs-string">''</span>),
+          ],
+        ),
+      ),
+    );
+  }
+}
+</div></div></code></pre><p>This widget is same as we have used in our ListView to build a text with transparent black background, but we have another <code>Text</code> widget that we will use to show the user <strong>bio</strong>.</p><p>The <code>Wap</code> is a widget that displays its children in multiple horizontal or vertical runs.</p><p>And at the end our <code>buildBackIcon(context),</code></p><p>In which we have passed our BuildContext,<br>
+This widget shows the back icon at the top Left corner of the Screen.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span>
+<span data-linenumber="6"></span>
+<span data-linenumber="7"></span>
+<span data-linenumber="8"></span>
+<span data-linenumber="9"></span>
+<span data-linenumber="10"></span>
+<span data-linenumber="11"></span>
+<span data-linenumber="12"></span>
+<span data-linenumber="13"></span>
+<span data-linenumber="14"></span>
+<span data-linenumber="15"></span>
+<span data-linenumber="16"></span>
+<span data-linenumber="17"></span>
+<span data-linenumber="18"></span>
+<span data-linenumber="19"></span>
+<span data-linenumber="20"></span></div><div class="code">  buildBackIcon(BuildContext context) {
+    <span class="hljs-keyword">return</span> Align(
+      alignment: Alignment.topLeft,
+      child: Padding(
+        padding: <span class="hljs-keyword">const</span> EdgeInsets.all(<span class="hljs-number">16.0</span>),
+        child: CircleAvatar(
+          backgroundColor: Colors.black12,
+          child: IconButton(
+            icon: Icon(
+              Icons.arrow_back,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+        ),
+      ),
+    );
+  }
+</div></div></code></pre><p>To achieve this we have used the <code>Align</code> widget again that will help us to align our back icon to <code>topLeft</code>.</p><p>A CircularAvatar helps us to wrap our icon with circular background and with color <code>Colors.black12</code>. Here 12 is alpha of <code>black</code> color.</p><p><code>IconButton</code> widget helps to show our icon with the <code>onPressed</code> callback using which we will pop out of the <code>detail</code> screen to <code>main</code> screen.</p><p>You guys are wondering now what’s this <code>Navigator.pop(context);</code> came from, It’s a widget that helps you to Pop the top-most route off the navigator that most tightly encloses the given context.</p><p>But wait how we come to the Detail screen <img alt=":sweat_smile:" class="emoji" src="https://cdnjs.cloudflare.com/ajax/libs/emojify.js/1.1.0/images/basic/sweat_smile.png" title=":sweat_smile:"> with that <code>PhotoResponse</code> object.</p><p>So just let’s go to our <code>image_item</code> class. Now wrap your <code>Stack</code> Widget with a <code>GestureDetector()</code> widget.<br>
+As name suggest It is a widget to identify the gestures on your widgets.<br>
+We will use the <code>onTap</code> property of the Gesture Widget and in that we will use <code>Navigator</code>.</p><pre><code class="dart hljs"><div class="wrapper"><div class="gutter linenumber"><span data-linenumber="1"></span>
+<span data-linenumber="2"></span>
+<span data-linenumber="3"></span>
+<span data-linenumber="4"></span>
+<span data-linenumber="5"></span></div><div class="code">Navigator.of(context).push(
+  MaterialPageRoute(
+    builder: (context) =&gt; Detail(widget.data),
+  ),
+);
+</div></div></code></pre><ul>
+<li>Here, <code>Navigator</code>: Creates a widget that maintains a stack-based history of child widgets.</li>
+<li><code>Push</code>: Pushes the given route onto the navigator that most tightly encloses the given context.</li>
+<li><code>MaterialPageRoute</code>: A modal route that replaces the entire screen with a platform-adaptive transition.</li>
+<li>The <code>MaterialPageRoute</code> takes builder in which we will return our <code>Detail</code> class and also pass the data of the <code>Photos</code>.</li>
+</ul></div>
+    <div class="ui-toc dropup unselectable hidden-print" style="display:none;">
+        <div class="pull-right dropdown">
+            <a id="tocLabel" class="ui-toc-label btn btn-default" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" title="Table of content">
+                <i class="fa fa-bars"></i>
+            </a>
+            <ul id="ui-toc" class="ui-toc-dropdown dropdown-menu" aria-labelledby="tocLabel">
+                <div class="toc"><ul class="nav">
+<li class=""><a href="#Flutter-Codelab-Photos-app" title="Flutter Codelab: Photos app">Flutter Codelab: Photos app</a></li>
+<li class=""><a href="#Overview" title="Overview">Overview</a></li>
+<li class=""><a href="#What-you’ll-learn" title="What you’ll learn?">What you’ll learn?</a><ul class="nav">
+<li class=""><a href="#you-will-be-able-to" title="you will be able to">you will be able to</a></li>
+<li class=""><a href="#Get-API-key-for-unsplash" title="Get API key for unsplash">Get API key for unsplash</a></li>
+</ul>
+</li>
+<li class=""><a href="#Create-Flutter-App" title="Create Flutter App">Create Flutter App</a></li>
+<li class=""><a href="#Building-the-UI" title="Building the UI">Building the UI</a><ul class="nav">
+<li class=""><a href="#Create-the-main-app-scaffold" title="Create the main app scaffold">Create the main app scaffold</a></li>
+<li><a href="#Build-the-Home-screen" title="Build the Home screen">Build the Home screen</a></li>
+<li><a href="#Build-the-ListView" title="Build the ListView">Build the ListView</a></li>
+<li><a href="#Create-a-PhotoResponse-class" title="Create a PhotoResponse class">Create a PhotoResponse class</a></li>
+<li><a href="#Fetch-Photos-from-the-Unsplash" title="Fetch Photos from the Unsplash">Fetch Photos from the Unsplash</a><ul class="nav">
+<li><a href="#Steps" title="Steps">Steps</a></li>
+<li><a href="#1-Add-the-http-package" title="1. Add the http package">1. Add the http package</a></li>
+<li><a href="#2-Make-a-network-request" title="2. Make a network request">2. Make a network request</a></li>
+<li><a href="#3-Convert-the-response-into-a-custom-Dart-object" title="3. Convert the response into a custom Dart object">3. Convert the response into a custom Dart object</a></li>
+</ul>
+</li>
+<li><a href="#create-buildPhotosListView" title="create buildPhotosListView">create buildPhotosListView</a><ul class="nav">
+<li><a href="#Create-ListView" title="Create ListView">Create ListView</a></li>
+<li><a href="#Create-ImageItemWidget" title="Create ImageItemWidget">Create ImageItemWidget</a></li>
+<li><a href="#Create-a-bottom-text-widget" title="Create a bottom text widget.">Create a bottom text widget.</a></li>
+</ul>
+</li>
+<li><a href="#Building-the-Details-Screen" title="Building the Details Screen.!">Building the Details Screen.!</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+            </ul>
+        </div>
+    </div>
+    <div id="ui-toc-affix" class="ui-affix-toc ui-toc-dropdown unselectable hidden-print" data-spy="affix" style="top:17px;display:none;"  >
+        <div class="toc"><ul class="nav">
+<li class=""><a href="#Flutter-Codelab-Photos-app" title="Flutter Codelab: Photos app">Flutter Codelab: Photos app</a></li>
+<li class=""><a href="#Overview" title="Overview">Overview</a></li>
+<li class=""><a href="#What-you’ll-learn" title="What you’ll learn?">What you’ll learn?</a><ul class="nav">
+<li class=""><a href="#you-will-be-able-to" title="you will be able to">you will be able to</a></li>
+<li class=""><a href="#Get-API-key-for-unsplash" title="Get API key for unsplash">Get API key for unsplash</a></li>
+</ul>
+</li>
+<li class=""><a href="#Create-Flutter-App" title="Create Flutter App">Create Flutter App</a></li>
+<li class=""><a href="#Building-the-UI" title="Building the UI">Building the UI</a><ul class="nav">
+<li class=""><a href="#Create-the-main-app-scaffold" title="Create the main app scaffold">Create the main app scaffold</a></li>
+<li><a href="#Build-the-Home-screen" title="Build the Home screen">Build the Home screen</a></li>
+<li><a href="#Build-the-ListView" title="Build the ListView">Build the ListView</a></li>
+<li><a href="#Create-a-PhotoResponse-class" title="Create a PhotoResponse class">Create a PhotoResponse class</a></li>
+<li><a href="#Fetch-Photos-from-the-Unsplash" title="Fetch Photos from the Unsplash">Fetch Photos from the Unsplash</a><ul class="nav">
+<li><a href="#Steps" title="Steps">Steps</a></li>
+<li><a href="#1-Add-the-http-package" title="1. Add the http package">1. Add the http package</a></li>
+<li><a href="#2-Make-a-network-request" title="2. Make a network request">2. Make a network request</a></li>
+<li><a href="#3-Convert-the-response-into-a-custom-Dart-object" title="3. Convert the response into a custom Dart object">3. Convert the response into a custom Dart object</a></li>
+</ul>
+</li>
+<li><a href="#create-buildPhotosListView" title="create buildPhotosListView">create buildPhotosListView</a><ul class="nav">
+<li><a href="#Create-ListView" title="Create ListView">Create ListView</a></li>
+<li><a href="#Create-ImageItemWidget" title="Create ImageItemWidget">Create ImageItemWidget</a></li>
+<li><a href="#Create-a-bottom-text-widget" title="Create a bottom text widget.">Create a bottom text widget.</a></li>
+</ul>
+</li>
+<li><a href="#Building-the-Details-Screen" title="Building the Details Screen.!">Building the Details Screen.!</a></li>
+</ul>
+</li>
+</ul>
+</div><div class="toc-menu"><a class="expand-toggle" href="#">Expand all</a><a class="back-to-top" href="#">Back to top</a><a class="go-to-bottom" href="#">Go to bottom</a></div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gist-embed/2.6.0/gist-embed.min.js" integrity="sha256-KyF2D6xPIJUW5sUDSs93vWyZm+1RzIpKCexxElmxl8g=" crossorigin="anonymous" defer></script>
+    <script>
+        var markdown = $(".markdown-body");
+        //smooth all hash trigger scrolling
+        function smoothHashScroll() {
+            var hashElements = $("a[href^='#']").toArray();
+            for (var i = 0; i < hashElements.length; i++) {
+                var element = hashElements[i];
+                var $element = $(element);
+                var hash = element.hash;
+                if (hash) {
+                    $element.on('click', function (e) {
+                        // store hash
+                        var hash = this.hash;
+                        if ($(hash).length <= 0) return;
+                        // prevent default anchor click behavior
+                        e.preventDefault();
+                        // animate
+                        $('body, html').stop(true, true).animate({
+                            scrollTop: $(hash).offset().top
+                        }, 100, "linear", function () {
+                            // when done, add hash to url
+                            // (default click behaviour)
+                            window.location.hash = hash;
+                        });
+                    });
+                }
+            }
+        }
+
+        smoothHashScroll();
+        var toc = $('.ui-toc');
+        var tocAffix = $('.ui-affix-toc');
+        var tocDropdown = $('.ui-toc-dropdown');
+        //toc
+        tocDropdown.click(function (e) {
+            e.stopPropagation();
+        });
+
+        var enoughForAffixToc = true;
+
+        function generateScrollspy() {
+            $(document.body).scrollspy({
+                target: ''
+            });
+            $(document.body).scrollspy('refresh');
+            if (enoughForAffixToc) {
+                toc.hide();
+                tocAffix.show();
+            } else {
+                tocAffix.hide();
+                toc.show();
+            }
+            $(document.body).scroll();
+        }
+
+        function windowResize() {
+            //toc right
+            var paddingRight = parseFloat(markdown.css('padding-right'));
+            var right = ($(window).width() - (markdown.offset().left + markdown.outerWidth() - paddingRight));
+            toc.css('right', right + 'px');
+            //affix toc left
+            var newbool;
+            var rightMargin = (markdown.parent().outerWidth() - markdown.outerWidth()) / 2;
+            //for ipad or wider device
+            if (rightMargin >= 133) {
+                newbool = true;
+                var affixLeftMargin = (tocAffix.outerWidth() - tocAffix.width()) / 2;
+                var left = markdown.offset().left + markdown.outerWidth() - affixLeftMargin;
+                tocAffix.css('left', left + 'px');
+            } else {
+                newbool = false;
+            }
+            if (newbool != enoughForAffixToc) {
+                enoughForAffixToc = newbool;
+                generateScrollspy();
+            }
+        }
+        $(window).resize(function () {
+            windowResize();
+        });
+        $(document).ready(function () {
+            windowResize();
+            generateScrollspy();
+        });
+
+        //remove hash
+        function removeHash() {
+            window.location.hash = '';
+        }
+
+        var backtotop = $('.back-to-top');
+        var gotobottom = $('.go-to-bottom');
+
+        backtotop.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToTop)
+                scrollToTop();
+            removeHash();
+        });
+        gotobottom.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            if (scrollToBottom)
+                scrollToBottom();
+            removeHash();
+        });
+
+        var toggle = $('.expand-toggle');
+        var tocExpand = false;
+
+        checkExpandToggle();
+        toggle.click(function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            tocExpand = !tocExpand;
+            checkExpandToggle();
+        })
+
+        function checkExpandToggle () {
+            var toc = $('.ui-toc-dropdown .toc');
+            var toggle = $('.expand-toggle');
+            if (!tocExpand) {
+                toc.removeClass('expand');
+                toggle.text('Expand all');
+            } else {
+                toc.addClass('expand');
+                toggle.text('Collapse all');
+            }
+        }
+
+        function scrollToTop() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: 0
+            }, 100, "linear");
+        }
+
+        function scrollToBottom() {
+            $('body, html').stop(true, true).animate({
+                scrollTop: $(document.body)[0].scrollHeight
+            }, 100, "linear");
+        }
+    </script>
+</body>
+
+</html>
